@@ -15,6 +15,7 @@ class CreatePhotosTable extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
+            $table->string('category_id');
             $table->string('title');
             $table->string('image');
             $table->boolean('visibility')->default(1);

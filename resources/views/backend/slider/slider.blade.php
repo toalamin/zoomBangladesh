@@ -52,7 +52,7 @@ Slider List
                             <td>{{ $key+1 }}</td>
                             <td>{{ $value->title }}</td>
                             <td>{{ $value->description }}</td>
-                            <td><img src="{{ asset('uploads/slider/'.$value->image) }}" height="50px" width="50px" /></td>
+                            <td><img src="frontant/slider/{{ $value->image }}" height="50px" width="50px" /></td>
                             <td>
                                 @if ($value->visibility === 1)
 

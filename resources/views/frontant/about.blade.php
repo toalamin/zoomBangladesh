@@ -100,33 +100,54 @@ Contact Us
                                 <td>Registration No</td>
                                 <td>Date of Registration</td>
                             </tr>
+                            @foreach($legality as $key => $value)
                             <tr>
-                                <th>Register office of Joint Stock Companies & Firm</th>
-                                <td>S -12467/2016</td>
-                                <td>13/12/2016</td>
+                                <th>{{ $value->name }}</th>
+                                <td>{{ $value->regi_no }}</td>
+                                <td>{{ $value->date }}</td>
                             </tr>
-
+                            @endforeach
                         </tbody>
                     </table>
 
 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="clearfix"></div>
+                            <h2 class="mt-0 line-height-1 text-center">The Legalily  <span class="text-theme-colored">Certificate</span></h2>
+                            <div class="separator separator-rouned">
+                                <i class="fa fa-cog fa-spin"></i>
+                            </div>
+                            <div class="owl-carousel-1col" data-nav="true">
+                                @foreach($legality as $key => $value)
+                                <div class="item">
+                                    <div class="box-hover-effect effect1 mb-sm-30">
 
-                    <img class="pull-left mr-15 thumbnail" width="50%" src="{{ asset('frontant/images/certificate.jpg') }}" alt="">
-                    <h2 class="mt-0 line-height-1 text-center">
-                        Core Values of Evergreen<br>
-                        <span class="text-theme-colored">
-                            Zoom Bangladesh Foundation
-                        </span>
-                    </h2>
-                    <p class="text-justify">
-                        <ul class="mt-10">
-                            <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i> <b>Justice:</b> We are the supporters of all justice and are struggling for it.</li>
-                            <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i><b>Honesty and Integrity:</b> We keep own honesty to all principles of organization and pay integrity to the interest of Evergreen Zoom Bangladesh Foundation</li>
-                            <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i> Gender equity: We try to respect of each other and believe that the women folk are human being too. They have equal rights as human being.</li>
-                            <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i> <b>Transparency and accountability:</b> We have no confusion in transparency and accountability to the people we work for and with whom.</li>
-                            <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i> <b>Responsiveness:</b> We are responsive to the peoples need and aspiration of local communities.</li>
-                        </ul>
-                    </p>
+                                        <img src="frontant/legality/{{ $value->certificate}}" />
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="mt-0 line-height-1 text-center">
+                                Core Values of Evergreen<br>
+                                <span class="text-theme-colored">
+                                    Zoom Bangladesh Foundation
+                                </span>
+                            </h2>
+                            <p class="text-justify">
+                                <ul class="mt-10">
+                                    <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i> <b>Justice:</b> We are the supporters of all justice and are struggling for it.</li>
+                                    <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i><b>Honesty and Integrity:</b> We keep own honesty to all principles of organization and pay integrity to the interest of Evergreen Zoom Bangladesh Foundation</li>
+                                    <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i> Gender equity: We try to respect of each other and believe that the women folk are human being too. They have equal rights as human being.</li>
+                                    <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i> <b>Transparency and accountability:</b> We have no confusion in transparency and accountability to the people we work for and with whom.</li>
+                                    <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i> <b>Responsiveness:</b> We are responsive to the peoples need and aspiration of local communities.</li>
+                                </ul>
+                            </p>
+                        </div>
+
+                    </div>
 
 
                     <div class="clearfix"></div>
@@ -135,88 +156,62 @@ Contact Us
         </div>
     </section>
     <!-- divider: Became a Volunteers 2 -->
-    <section class="bg-lighter">
-        <div class="container">
-            <div class="section-content">
+    <!-- Section: Testimonials and Logo -->
+<!-- Section: Testimonials and Logo -->
+<section class="divider parallax layer-overlay  overlay-white-5" data-stellar-background-ratio="0.2" data-bg-img="{{ asset('frontant/images/bg/bg1.jpg') }}">
+  <div class="container pt-0 pb-0">
+    <div class="row equal-height">
 
-                <h2 class="mt-0 line-height-1 text-center">What People<span class="text-theme-colored"> Said!!</span></h2>
-                <div class="separator separator-rouned">
-                    <i class="fa fa-cog fa-spin"></i>
+      <div class="col-md-5 bg-light-transparent">
+        <div class="pt-50 pb-50 pl-20 pr-20">
+          <h4 class="text-uppercase line-bottom mt-0">Our Sponsors</h4>
+          <div class="owl-carousel-3col">
+            @foreach($sponsor as $key => $value)
+            <div class="item">
+              <div class="text-center">
+                <div class="thumb"><img class="img-circle" alt="" src="frontant/sponsor/{{ $value->logo}}"></div>
+                <div class="content pt-10">
+                  <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat turpis nec leo pellentesque tincidunt adipiscing elit.</p> -->
+                  <i class="fa fa-quote-right font-36 mt-10 text-gray-lightgray"></i>
+                  <h5 class="author text-theme-colored mb-0">{{ $value->name }}</h5>
+                  <!-- <h6 class="title text-gray mt-0 mb-15">Designer</h6> -->
                 </div>
-
-
-                <div class="row">
-                    <div class="col-md-4 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
-                        <div class="p-40 mb-sm-20 text-center bg-lightest border-2px">
-                            <h2 class="mt-0">Friends of <br> <span class="text-theme-colored"> EZB Foundation</span></h2>
-
-                            <div class="row">
-                                <div class="col-md-4"><img class="img-thambnail" src="{{ asset('frontant/images/f1.jpg') }}" alt=""></div>
-                                <div class="col-md-4"><img class="img-thambnail" src="{{ asset('frontant/images/f2.jpg') }}" alt=""></div>
-                                <div class="col-md-4"><img class="img-thambnail" src="{{ asset('frontant/images/f3.png') }}" alt=""></div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        </div>
-                    </div>
-                    <div class="col-md-8 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
-
-                        <div class="owl-carousel-1col owl-dots-bottom-right" data-dots="true">
-                            <div class="item">
-                                <div class="row-fluid">
-                                    <div class="col-md-5">
-                                        <img src="{{ asset('frontant/images/gallery/h11.jpg') }}" alt="">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <h4 class="mt-0 mt-sm-10 mb-0 text-black-666">Khaled Hossain</h4>
-                                        <h2 class="line-bottom mt-0">Vice <span class="text-theme-colored"> President </span></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam maxime nesciunt ex modi minus illum nemo provident ducimus, velit magnam consectetur adipisicing nemo provident ducimus, velit magnam.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row-fluid">
-                                    <div class="col-md-5">
-                                        <img src="{{ asset('frontant/images/gallery/h12.jpg') }}" alt="">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <h4 class="mt-0 mt-sm-10 mb-0 text-black-666">Jerin Sultana</h4>
-                                        <h2 class="line-bottom mt-0">President<span class="text-theme-colored"> </span></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam maxime nesciunt ex modi minus illum nemo provident ducimus, velit magnam consectetur adipisicing nemo provident ducimus, velit magnam.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row-fluid">
-                                    <div class="col-md-5">
-                                        <img src="{{ asset('frontant/images/gallery/h13.jpg') }}" alt="">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <h4 class="mt-0 mt-sm-10 mb-0 text-black-666">Rajib Sarker</h4>
-                                        <h2 class="line-bottom mt-0">Chief <span class="text-theme-colored"> Co-Ordinator</span></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam maxime nesciunt ex modi minus illum nemo provident ducimus, velit magnam consectetur adipisicing nemo provident ducimus, velit magnam.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+            @endforeach
+
+          </div>
         </div>
-    </section>
+      </div>
+
+      <div class="col-md-2 bg-light-transparent"></div>
+
+
+
+      <div class="col-md-5 bg-light-transparent">
+        <div class="">
+          <h4 class="text-uppercase line-bottom mt-0">Our Sponsors</h4>
+          <div class="owl-carousel-1col">
+            @foreach($people as $key => $value)
+            <div class="item">
+              <div class="text-center">
+                <div class="thumb"><img class="img-circle" alt="" src="frontant/people/{{$value->image}}"></div>
+                <div class="content">
+                  <p><?php echo $value->description; ?></p>
+                  <i class="fa fa-quote-right font-36 mt-10 text-gray-lightgray"></i>
+                  <h5 class="author text-theme-colored mb-0"><?php echo $value->name; ?></h5>
+                  <h6 class="title text-gray mt-0 mb-15"><?php echo $value->designation; ?></h6>
+                </div>
+              </div>
+            </div>
+            @endforeach
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
     @endsection

@@ -21,8 +21,13 @@ class CreateSystemConfigsTable extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('logo');
+            $table->string('default_banner_image');
             $table->string('fb_link');
-            $table->string('instagram_link');
+            $table->string('youtube_link');
+            $table->string('skypee')->nullable();
+            $table->string('instagram_link')->nullable();
+            $table->string('twitter_link')->nullable();
+            $table->string('linkedin')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -15,6 +15,7 @@ class CreateVideosTable extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
+            $table->string('category_id');
             $table->string('title');
             $table->string('link');
             $table->boolean('visibility')->default(1);

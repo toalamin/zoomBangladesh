@@ -15,9 +15,14 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('type')->comment('1=general memeber,2=lifetime member');
-            $table->string('full_name');
+            $table->tinyInteger('type')->comment('team category id');
+            $table->string('divission');
+            $table->string('district');
+            $table->string('gender');
+            $table->string('blood');
+            $table->string('branch_id');
             $table->string('image');
+            $table->string('full_name');
             $table->string('email');
             $table->string('phone');
             $table->string('facebook');
@@ -27,7 +32,8 @@ class CreateMembersTable extends Migration
             $table->text('permanent_address');
             $table->string('education');
             $table->string('last_institution');
-            $table->string('designation');
+           // $table->string('designation');
+            $table->longText('description_yourself');
             $table->boolean('visibility')->default(0);
             $table->softDeletes();
             $table->timestamps();

@@ -13,11 +13,11 @@ Add New Update
                 <a href="{{ route('dashboard') }}">Dashboard</a>
             </li>
             <li>Setup</li>
-            <li class="active">Add New Notice</li>
+            <li class="active">Add New Update</li>
         </ul>
         <ul class="breadcrumb pull-right">
             <li>
-                <a title="Add New Historical Place" class="financeAddPermission btn btn-sm btn-success" href="{{ route('notice.index') }}">
+                <a title="Add New Update" class="financeAddPermission btn btn-sm btn-success" href="{{ route('update.index') }}">
                     <i class="ace-icon fa fa-list"></i>
                     List
                 </a>
@@ -28,13 +28,34 @@ Add New Update
     <div class="row">
         <br>
         <div class="col-md-12">
-            <form action="{{ route('notice.store') }}" method="post" class="form-horizontal" enctype="multipart/form-data">
+            <form action="{{ route('update.store') }}" method="post" class="form-horizontal" enctype="multipart/form-data">
                 {{csrf_field()}}
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Date <span style="color:red!important"> *</span></label>
+                    <div class="col-sm-8">
+                        <input type="date" value="{{ old('date') }}" name="date" class="form-control  " placeholder=" Date" />
+                        @error('date')
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+                            <strong>
+                                <i class="ace-icon fa fa-check"></i>
+                                Warning!
+                            </strong>
+                            {{ $message }}
+                            <br />
+                        </div>
+                        @enderror
+
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Title <span style="color:red!important"> *</span></label>
                     <div class="col-sm-8">
-                        <input type="text" value="{{ old('title') }}" name="title" class="form-control  " placeholder="Slider Title" />
+                        <input type="text" value="{{ old('title') }}" name="title" class="form-control  " placeholder=" Title" />
                         @error('title')
                         <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">
@@ -54,7 +75,7 @@ Add New Update
                 <div class="form-group">
                     <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Description<span style="color:red!important"> *</span></label>
                     <div class="col-sm-8">
-                    <textarea class="ckeditor form-control" name="description"></textarea>
+                    <textarea class="ckeditor form-control" placeholder="Description" name="description">{{ old('description') }}</textarea>
                         <!-- <textarea type="text" rows="10" value="" name="description" class="form-control" placeholder="Slider Description.."></textarea> -->
                         @error('description')
                         <div class="alert alert-danger">

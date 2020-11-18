@@ -16,9 +16,10 @@ class CreateUpdatesTable extends Migration
         Schema::create('updates', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->date('date');
             $table->longText('description');
             $table->string('image')->nullable();
-            $table->boolean('visibility')->default(0);
+            $table->boolean('visibility')->default(1);
             $table->softDeletes();
             $table->timestamps();
         });

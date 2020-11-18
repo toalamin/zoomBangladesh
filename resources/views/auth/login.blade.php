@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>Login Page - Sadullapur Upazila Somity -Dhaka</title>
+    <title>Login Page - Zoom Bangladesh</title>
 
     <meta name="description" content="User login page" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -44,11 +44,10 @@
                     <div class="login-container">
                         <div class="center">
                             <h4>
-                                <img src="{{ asset('frontant/assets/img/logo.png') }}" height="200px" width="200px"/><br>
-                                <span class="red">Sadullapur Upazila</span>
-                                <span class="white" id="id-text2">Somity</span>
+                                <img src="{{ asset('frontant/images/ezb-foundation.png') }}" /><br>
+                                <span class="red">Zoom </span>
+                                <span class="white" id="id-text2">Bangladesh</span>
                             </h4>
-                            <h4 class="blue" id="id-company-text">&copy; Dhaka</h4>
                         </div>
 
                         <div class="space-6"></div>

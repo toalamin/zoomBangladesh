@@ -19,6 +19,10 @@ class ContactController extends Controller
     public function store(Request $request)
     {
 
+
+       
+
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:55|min:4',
             'email' => 'required|email|unique:contacts|max:55',
@@ -35,6 +39,7 @@ class ContactController extends Controller
         $notice = new Contact();
         $notice->name = $request->name;
         $notice->email = $request->email;
+        $notice->phone = $request->phone;
         $notice->subject = $request->subject;
         $notice->message = $request->message;
         $notice->save();

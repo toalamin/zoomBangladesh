@@ -23,7 +23,7 @@ Update  List
             <li>
                 <a title="Add New Slider" class="financeAddPermission btn btn-sm btn-success" href="{{ route('update.create') }}">
                     <i class="ace-icon fa fa-plus"></i>
-                    Add New Update info
+                    Add New Update 
                 </a>
             </li>
         </ul>
@@ -39,7 +39,8 @@ Update  List
                     <thead>
                         <tr>
                             <th width="10%">Sl</th>
-                            <th width="20%">Title</th>
+                            <th width="10%">Date</th>
+                            <th width="10%">Title</th>
                             <th width="40%">Description</th>
                             <th width="10%">Image</th>
                             <th width="10%">Status</th>
@@ -50,9 +51,10 @@ Update  List
                         @foreach($update as $key => $value)
                         <tr>
                             <td>{{ $key+1 }}</td>
+                            <td>{{ $value->date }}</td>
                             <td>{{ $value->title }}</td>
-                            <td>{{ $value->description }}</td>
-                            <td><img src="{{ asset('uploads/update/'.$value->image) }}" height="50px" width="50px" /></td>
+                            <td><?php echo $value->description ?></td>
+                            <td><img src="/frontant/update/{{ $value->image }}" height="50px" width="50px" /></td>
                             <td>
                                 @if ($value->visibility === 1)
 

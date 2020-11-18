@@ -62,8 +62,6 @@
 			<b class="arrow"></b>
 
 			<ul class="submenu">
-
-
 				<li class="">
 					<a href="{{ route('slider.page') }}">
 						<i class="menu-icon fa fa-caret-right"></i>
@@ -73,42 +71,109 @@
 				<li class="">
 					<a href="{{ route('mission.index') }}">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Mission & Vission
+						Mission
+					</a>
+
+				</li>
+				<li class="">
+					<a href="{{ route('help.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						How Can Help
 					</a>
 
 				</li>
 
 				<li class="">
-					<a href="{{ route('history.index') }}">
+					<a href="{{ route('monthly.index') }}">
 						<i class="menu-icon fa fa-caret-right"></i>
-						History
+						Month of Employee
 					</a>
 				</li>
 
 				<li class="">
-					<a href="{{ route('historical.place.index') }}">
+					<a href="{{ route('sponsor.index') }}">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Historical Place
+						Sponsor
 					</a>
-
-					
 				</li>
 
 				<li class="">
-					<a href="{{ route('eminent.people.index') }}">
+					<a href="{{ route('people.index') }}">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Eminent People
+						People Say
 					</a>
-
-					
 				</li>
-
 
 			</ul>
 		</li>
-		
+
 
 		<li class="">
+			<a href="#" class="dropdown-toggle">
+				<i class="menu-icon fa fa-table"></i>
+				<span class="menu-text">
+					About Us
+				</span>
+				<b class="arrow fa fa-angle-down"></b>
+			</a>
+
+			<b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class="">
+					<a href="{{ route('gallery.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Gallery Category
+					</a>
+				</li>
+
+				<li class="">
+					<a href="{{ route('team.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Team Category </a>
+				</li>
+				<li class="">
+					<a href="{{ route('teamm.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Team </a>
+				</li>
+
+				<li class="">
+					<a href="{{ route('photo.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Photo Gallery
+					</a>
+				</li>
+
+
+				<li class="">
+					<a href="{{ route('video.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Video Gallery
+					</a>
+
+				</li>
+				<li class="">
+					<a href="{{ route('faq.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						FAQ
+					</a>
+				</li>
+
+
+
+				<li class="">
+					<a href="{{ route('legality.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Legality
+					</a>
+				</li>
+
+			</ul>
+		</li>
+
+
+		<!-- <li class="">
 			<a href="#" class="dropdown-toggle">
 				<i class="menu-icon fa fa-bell"></i>
 				<span class="menu-text">
@@ -140,7 +205,7 @@
 
 
 			</ul>
-		</li>
+		</li> -->
 
 
 		<li class="">
@@ -176,108 +241,43 @@
 
 			</ul>
 		</li>
-<li class="">
+		<li class="">
 			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-user"></i>
+				<i class="menu-icon fa fa-child"></i>
 				<span class="menu-text">
-					Speech
+					Child Sponsoor
 				</span>
-
 				<b class="arrow fa fa-angle-down"></b>
 			</a>
-
 			<b class="arrow"></b>
-
 			<ul class="submenu">
-
-
 				<li class="">
-					<a href="{{ route('speech.create') }}">
+					<a href="{{ route('child.create') }}">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Add New Speech
+						Add New
 					</a>
 				</li>
 				<li class="">
-					<a href="{{ route('speech.index') }}">
+					<a href="{{ route('child.index') }}">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Speech List
+						All List
 					</a>
-
 				</li>
 
-
-
+				<li class="">
+					<a href="{{ route('featured.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Sponsoor Child Featured
+					</a>
+				</li>
 			</ul>
 		</li>
 
-		<li class="">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-picture-o"></i>
-				<span class="menu-text">
-					Photo
-				</span>
-
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-
-			<b class="arrow"></b>
-
-			<ul class="submenu">
-
-
-				<li class="">
-					<a href="{{ route('photo.create') }}">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Add New Photo
-					</a>
-				</li>
-				<li class="">
-					<a href="{{ route('photo.index') }}">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Photo List
-					</a>
-
-				</li>
 
 
 
-			</ul>
-		</li>
-		<li class="">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-video-camera"></i>
-				<span class="menu-text">
-					Video
-				</span>
 
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-
-			<b class="arrow"></b>
-
-			<ul class="submenu">
-
-
-				<li class="">
-					<a href="{{ route('video.create') }}">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Add New Video
-					</a>
-				</li>
-				<li class="">
-					<a href="{{ route('video.index') }}">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Video List
-					</a>
-
-				</li>
-
-
-
-			</ul>
-		</li>
-
-		<li class="">
+		<!-- <li class="">
 			<a href="#" class="dropdown-toggle">
 				<i class="menu-icon fa fa-users"></i>
 				<span class="menu-text">
@@ -301,7 +301,7 @@
 				<li class="">
 					<a href="{{ route('member.index') }}">
 						<i class="menu-icon fa fa-caret-right"></i>
-						 Member List
+						Member List
 					</a>
 
 				</li>
@@ -309,44 +309,14 @@
 
 
 			</ul>
-		</li>
-
-		<li class="">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-users"></i>
-				<span class="menu-text">
-					Committee
-				</span>
-
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-
-			<b class="arrow"></b>
-
-			<ul class="submenu">
-				<li class="">
-					<a href="{{ route('executive.committee.index') }}">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Executive Committee
-					</a>
-				</li>
-				<li class="">
-					<a href="{{ route('adviser.committee.index') }}">
-						<i class="menu-icon fa fa-caret-right"></i>
-						 Adviser Committee
-					</a>
-
-				</li>
+		</li> -->
 
 
-
-			</ul>
-		</li>
 
 
 		<li class="">
 			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-envelope"></i>
+				<i class="menu-icon fa fa-user-plus"></i>
 				<span class="menu-text">
 					Contact
 				</span>
@@ -360,11 +330,130 @@
 				<li class="">
 					<a href="{{ route('contact.index') }}">
 						<i class="menu-icon fa fa-caret-right"></i>
-						 Contact List
+						Contact List
 					</a>
 				</li>
 			</ul>
 		</li>
+
+		<li class="">
+			<a href="#" class="dropdown-toggle">
+				<i class="menu-icon fa fa-user-plus"></i>
+				<span class="menu-text">
+					Donation
+				</span>
+
+				<b class="arrow fa fa-angle-down"></b>
+			</a>
+
+			<b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class="">
+					<a href="{{ route('donation.list') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						People Donation List
+					</a>
+				</li>
+				<li class="">
+					<a href="{{ route('current.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Current Donation
+					</a>
+				</li>
+			</ul>
+		</li>
+
+
+
+
+
+
+		<li class="">
+			<a href="#" class="dropdown-toggle">
+				<i class="menu-icon fa fa-list"></i>
+				<span class="menu-text">
+					Project
+				</span>
+
+				<b class="arrow fa fa-angle-down"></b>
+			</a>
+
+			<b class="arrow"></b>
+
+			<ul class="submenu">
+
+
+				<li class="">
+					<a href="{{ route('projectCategory.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Project Category
+					</a>
+				</li>
+				<!-- <li class="">
+					<a href="{{ route('project.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Project List
+					</a>
+				</li> -->
+				<li class="">
+					<a href="{{ route('fundraise.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Fund Raise
+					</a>
+				</li>
+			</ul>
+		</li>
+
+
+
+		<li class="">
+			<a href="#" class="dropdown-toggle">
+				<i class="menu-icon fa fa-pie-chart"></i>
+				<span class="menu-text">
+					Account
+				</span>
+
+				<b class="arrow fa fa-angle-down"></b>
+			</a>
+
+			<b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class="">
+					<a href="{{ route('account.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						List
+					</a>
+				</li>
+			</ul>
+		</li>
+
+
+
+		<li class="">
+			<a href="#" class="dropdown-toggle">
+				<i class="menu-icon fa fa-envelope"></i>
+				<span class="menu-text">
+					Header Image
+				</span>
+
+				<b class="arrow fa fa-angle-down"></b>
+			</a>
+
+			<b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class="">
+					<a href="{{ route('header.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						List
+					</a>
+				</li>
+			</ul>
+		</li>
+
+
 
 		<li class="">
 			<a href="#" class="dropdown-toggle">
@@ -388,7 +477,14 @@
 				<li class="">
 					<a href="{{ route('user.index') }}">
 						<i class="menu-icon fa fa-caret-right"></i>
-						 User List
+						User List
+					</a>
+				</li>
+
+				<li class="">
+					<a href="{{ route('index.systemConfig') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						System Config
 					</a>
 				</li>
 			</ul>

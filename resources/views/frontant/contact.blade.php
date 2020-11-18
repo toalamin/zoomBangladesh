@@ -89,18 +89,20 @@ Contact Us
                     <div class="col-md-12">
 
                         <!-- Contact Form -->
-                        <form id="contact_form" name="contact_form" class="contact-form-transparent" action="" method="post">
-                            <div class="row">
+                        <form id="contact_form" name="contact_form" class="contact-form-transparent" action="{{ route('contact.store') }}" method="POST">
+                        {{csrf_field()}} 
+                        
+                        <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Name <small>*</small></label>
-                                        <input name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
+                                        <input name="name" class="form-control" type="text" placeholder="Enter Name" required="">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Email <small>*</small></label>
-                                        <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                                        <input name="email" class="form-control required email" type="email" placeholder="Enter Email">
                                     </div>
                                 </div>
                             </div>
@@ -108,19 +110,19 @@ Contact Us
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Subject <small>*</small></label>
-                                        <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject">
+                                        <input name="subject" class="form-control required" type="text" placeholder="Enter Subject">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                                        <input name="phone" class="form-control" type="text" placeholder="Enter Phone">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Message</label>
-                                <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
+                                <textarea name="message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
                             </div>
                             <div class="form-group">
                                 <input name="form_botcheck" class="form-control" type="hidden" value="" />
@@ -130,7 +132,7 @@ Contact Us
 
                         <!-- Contact Form Validation-->
                         <script type="text/javascript">
-                            $("#contact_form").validate({
+                            $("#contact_formq").validate({
                                 submitHandler: function(form) {
                                     var form_btn = $(form).find('button[type="submit"]');
                                     var form_result_div = '#form-result';

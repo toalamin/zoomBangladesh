@@ -39,8 +39,8 @@ photo  List
                     <thead>
                         <tr>
                             <th width="10%">Sl</th>
+                            <th>Category</th>
                             <th width="20%">Title</th>
-                           
                             <th width="10%">Image</th>
                             <th width="10%">Status</th>
                             <th width="10%">Action</th>
@@ -50,9 +50,10 @@ photo  List
                         @foreach($photo as $key => $value)
                         <tr>
                             <td>{{ $key+1 }}</td>
+                            <td>{{ $value->category->title }}</td>
                             <td>{{ $value->title }}</td>
                          
-                            <td><img src="{{ asset('uploads/photo/'.$value->image) }}" height="50px" width="50px" /></td>
+                            <td><img src="/frontant/photo/{{ $value->image }}" height="50px" width="50px" /></td>
                             <td>
                                 @if ($value->visibility === 1)
 

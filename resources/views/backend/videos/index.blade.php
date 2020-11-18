@@ -1,6 +1,6 @@
 @extends('backend_layouts.app')
 @section('title')
-Video  List
+Video List
 @endsection
 
 @section('css')
@@ -40,6 +40,7 @@ Video  List
                     <thead>
                         <tr>
                             <th width="10%">Sl</th>
+                            <th width="10%">Category</th>
                             <th width="20%">Title</th>
                             <th width="10%">Video Link</th>
                             <th width="10%">Status</th>
@@ -50,8 +51,8 @@ Video  List
                         @foreach($video as $key => $value)
                         <tr>
                             <td>{{ $key+1 }}</td>
+                            <td>{{ $value->category->title }}</td>
                             <td>{{ $value->title }}</td>
-                         
                             <td>{{ $value->link }}</td>
                             <td>
                                 @if ($value->visibility === 1)

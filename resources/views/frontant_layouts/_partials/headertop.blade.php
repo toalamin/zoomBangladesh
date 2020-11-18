@@ -25,10 +25,10 @@
                     <ul class="list-inline pull-right flip sm-pull-none sm-text-center mt-5">
                         <li class="mt-sm-10 mb-sm-10">
                             <!-- Modal: Appointment Starts -->
-                            <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10 ajaxload-popup" href="ajax-load/donation-form.html">Donate Now</a>
+                            <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10 " style="color:red!important;" href="{{route('donate.page')}}">Donate Us</a>
                         </li>
                         <li class="mt-sm-10 mb-sm-10">
-                            <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10 ajaxload-popup" href="ajax-load/volunteer-apply-form.html">Join Us</a>
+                            <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10 " style="color:red!important;" href="{{ route('volunteer.page') }}">Join Us</a>
                         </li>
                     </ul>
                 </div>

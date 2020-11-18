@@ -32,6 +32,27 @@ Edit Update
                 {{csrf_field()}}
 
                 <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Date <span style="color:red!important"> *</span></label>
+                    <div class="col-sm-8">
+                        <input type="date" value="{{ $update->date  }}" name="title" class="form-control  " placeholder="Date" />
+                        @error('date')
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+                            <strong>
+                                <i class="ace-icon fa fa-check"></i>
+                                Warning!
+                            </strong>
+                            {{ $message }}
+                            <br />
+                        </div>
+                        @enderror
+
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Title <span style="color:red!important"> *</span></label>
                     <div class="col-sm-8">
                         <input type="text" value="{{ $update->title  }}" name="title" class="form-control  " placeholder="Update Title" />
@@ -77,7 +98,7 @@ Edit Update
                     <div class="col-sm-8">
                         <input type="file" value="" name="file" class="form-control" placeholder="Slider Description.." />
                         <input type="hidden" value="{{ $update->image }}" name="old_image" class="form-control" />
-                        <img src="{{ asset('uploads/update/'.$update->image) }}" height="50px" width="50px" />
+                        <img src="/frontant/update/{{ $update->image }}" height="50px" width="50px" />
                         @error('file')
                         <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">

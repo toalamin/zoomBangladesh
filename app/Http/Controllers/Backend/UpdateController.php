@@ -41,6 +41,7 @@ class UpdateController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required|unique:updates|max:200',
+            'date' => 'required',
             'description' => 'required|max:800',
             'file' => 'nullable | mimes:jpeg,jpg | dimensions:min_width:200,min_height:200',
         ]);
@@ -52,6 +53,7 @@ class UpdateController extends Controller
         $logo = $this->uploadSliderImage($request);
         $notice = new Update();
         $notice->image = $logo ?? null;
+        $notice->date = $request->date;
         $notice->title = $request->title;
         $notice->description = $request->description;
         $notice->visibility = $request->status;
@@ -95,6 +97,7 @@ class UpdateController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required|max:200|unique:updates,title,' . $id,
             'description' => 'required|max:800',
+            'date' => 'required',
             'file' => 'nullable|image|dimensions:min_width:200,min_height:200',
             
         ]);
@@ -105,6 +108,7 @@ class UpdateController extends Controller
         $logo = $this->uploadSliderImage($request);
         $update = new Update();
         $data = [
+            'date' => $request->date,
             'title' => $request->title,
             'description' => $request->description,
             'image' => $logo ?? $request->old_image,
@@ -135,7 +139,7 @@ class UpdateController extends Controller
 
         $file = $request->file('file');
         $file_name = microtime() . time() . '.' . $file->getClientOriginalExtension();
-        $path = base_path('/uploads/update/');
+        $path = public_path().'/frontant/update/';
         //Check if the directory already exists.
         if (!is_dir($path)) {
             //Directory does not exist, so lets create it.

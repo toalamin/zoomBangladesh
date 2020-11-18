@@ -77,7 +77,7 @@ Slider Edit
                     <div class="col-sm-6">
                         <input type="file" value="" name="file" class="form-control" placeholder="Slider Description.." />
                         <input type="hidden" value="{{ $editSlider->image }}" name="old_image" class="form-control"/>
-                        <img src="{{ asset('uploads/slider/'.$editSlider->image) }}" height="50px" width="50px"/>
+                        <img src="/frontant/slider/{{ $editSlider->image }}" height="50px" width="50px" />
                         @error('file')
                         <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">

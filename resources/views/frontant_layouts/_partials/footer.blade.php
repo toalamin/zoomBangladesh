@@ -1,10 +1,10 @@
-<footer id="footer" class="bg-black-222">
+<footer id="footer" class="bg-black-222" style="color:#a9a9a9!important;">
   <div class="container pt-80 pb-30">
     <div class="row border-bottom-black">
       <div class="col-sm-6 col-md-3">
         <div class="widget dark">
           <img class="mb-20" alt="" src="{{ asset('frontant/images/ezb-foundation.png') }}">
-        
+
           <p>22 Segun Bagicha, Chittagong Hotel(4th Floor), Dhaka-1000.</p>
           <ul class="list-inline mt-5">
             <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored mr-5"></i> <a class="text-gray" href="#">01743732845</a> </li>
@@ -17,11 +17,11 @@
         <div class="widget dark">
           <h5 class="widget-title line-bottom">Useful Links</h5>
           <ul class="list angle-double-right list-border">
-            <li><a href="#">Body Building</a></li>
-            <li><a href="#">Fitness Classes</a></li>
-            <li><a href="#">Weight lifting</a></li>
-            <li><a href="#">Yoga Courses</a></li>
-            <li><a href="#">Training</a></li>
+            <li><a href="{{ route('contact') }}">Body Building</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('faq.page') }}">FAQ</a></li>
+            <li><a href="{{ route('team.page') }}">Team</a></li>
+            <!-- <li><a href="{{ route('volunteer.page') }}">Volunteer</a></li> -->
           </ul>
         </div>
       </div>
@@ -101,8 +101,8 @@
         <div class="widget dark">
           <h5 class="widget-title mb-10">Call Us Now</h5>
           <div class="text-gray">
-            +61 3 1234 5678 <br>
-            +12 3 1234 5678
+            01739-801419 <br>
+            ezbfoundation@gmail.com
           </div>
         </div>
       </div>
@@ -125,7 +125,7 @@
     <div class="container pt-20 pb-20">
       <div class="row">
         <div class="col-md-6">
-          <p class="font-11 text-black-777 m-0">Copyright &copy;<?php echo date('Y')?> Zoom Bangladesh. All Rights Reserved</p>
+          <p class="font-11 text-black-777 m-0">Copyright &copy;<?php echo date('Y') ?> Zoom Bangladesh. All Rights Reserved</p>
         </div>
         <div class="col-md-6 text-right">
           <div class="widget no-border m-0">

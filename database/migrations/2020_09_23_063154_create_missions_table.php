@@ -17,7 +17,7 @@ class CreateMissionsTable extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->text('description')->nullable();
-            $table->boolean('visibility')->default(0);
+            $table->boolean('visibility')->default(1);
             $table->softDeletes();
             $table->timestamps();
         });

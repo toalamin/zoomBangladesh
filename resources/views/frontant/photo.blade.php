@@ -35,175 +35,37 @@ Photo Gallery
                         <!-- Portfolio Filter -->
                         <div class="portfolio-filter">
                             <a href="#" class="active" data-filter="*">All</a>
-                            <a href="#branding" class="" data-filter=".branding">Branding</a>
-                            <a href="#design" class="" data-filter=".design">Design</a>
-                            <a href="#photography" class="" data-filter=".photography">Photography</a>
+                            @foreach($photo as $key => $value)
+                            <a href="#photo{{$key}}" class="" data-filter=".photo{{$key}}">{{ $value->title }}</a>
+                            @endforeach
+
                         </div>
                         <!-- End Portfolio Filter -->
 
                         <!-- Portfolio Gallery Grid -->
                         <div class="gallery-isotope grid-3 gutter-small clearfix" data-lightbox="gallery" style="position: relative; height: 635.949px;">
                             <!-- Portfolio Item Start -->
-                            <div class="gallery-item design" style="position: absolute; left: 0px; top: 0px;">
+                            @foreach($photo as $key1 => $value)
+                            @foreach($value->photos as $key => $sphoto)
+                            <div class="gallery-item photo{{$key1}}" style="position: absolute; left: 0px; top: 0px;">
                                 <div class="thumb">
-                                    <img class="img-fullwidth" src="{{ asset('frontant/images/gallery/3.jpg') }}" alt="project">
+                                    <img class="img-fullwidth" src="frontant/photo/{{$sphoto->image}}" alt="{{$value->title }}">
                                     <div class="overlay-shade"></div>
                                     <div class="text-holder">
-                                        <div class="title text-center">Sample Title</div>
+                                        <div class="title text-center">{{$sphoto->title }}</div>
                                     </div>
                                     <div class="icons-holder">
                                         <div class="icons-holder-inner">
                                             <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                                                <a href="{{ asset('frontant/images/gallery/3.jpg') }}" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                                                <a href="frontant/photo/{{$sphoto->image}}" data-lightbox-gallery="gallery" title="{{$sphoto->title }}"><i class="fa fa-picture-o"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
+                            @endforeach
 
-
-
-
-
-
-
-
-
-
-                            <!-- Portfolio Item End -->
-
-                            <!-- Portfolio Item Start -->
-                            <div class="gallery-item design" style="position: absolute; left: 759px; top: 0px;">
-                                <div class="thumb">
-                                    <img class="img-fullwidth" src="{{ asset('frontant/images/gallery/3.jpg') }}" alt="project">
-                                    <div class="overlay-shade"></div>
-                                    <div class="text-holder">
-                                        <div class="title text-center">Sample Title</div>
-                                    </div>
-                                    <div class="icons-holder">
-                                        <div class="icons-holder-inner">
-                                            <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                                                <a href="{{ asset('frontant/images/gallery/3.jpg') }}" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Portfolio Item End -->
-
-                            <!-- Portfolio Item Start -->
-                            <div class="gallery-item branding" style="position: absolute; left: 0px; top: 211px;">
-                                <div class="thumb">
-                                    <img class="img-fullwidth" src="{{ asset('frontant/images/gallery/4.jpg') }}" alt="project">
-                                    <div class="overlay-shade"></div>
-                                    <div class="text-holder">
-                                        <div class="title text-center">Sample Title</div>
-                                    </div>
-                                    <div class="icons-holder">
-                                        <div class="icons-holder-inner">
-                                            <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                                                <a href="{{ asset('frontant/images/gallery/4.jpg') }}" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Portfolio Item End -->
-
-                            <!-- Portfolio Item Start -->
-                            <div class="gallery-item design photography" style="position: absolute; left: 379px; top: 211px;">
-                                <div class="thumb">
-                                    <img class="img-fullwidth" src="{{ asset('frontant/images/gallery/5.jpg') }}" alt="project">
-                                    <div class="overlay-shade"></div>
-                                    <div class="text-holder">
-                                        <div class="title text-center">Sample Title</div>
-                                    </div>
-                                    <div class="icons-holder">
-                                        <div class="icons-holder-inner">
-                                            <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                                                <a href="{{ asset('frontant/images/gallery/5.jpg') }}" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Portfolio Item End -->
-
-                            <!-- Portfolio Item Start -->
-                            <div class="gallery-item photography" style="position: absolute; left: 759px; top: 211px;">
-                                <div class="thumb">
-                                    <img class="img-fullwidth" src="{{ asset('frontant/images/gallery/6.jpg') }}" alt="project">
-                                    <div class="overlay-shade"></div>
-                                    <div class="text-holder">
-                                        <div class="title text-center">Sample Title</div>
-                                    </div>
-                                    <div class="icons-holder">
-                                        <div class="icons-holder-inner">
-                                            <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                                                <a href="{{ asset('frontant/images/gallery/6.jpg') }}" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Portfolio Item End -->
-
-                            <!-- Portfolio Item Start -->
-                            <div class="gallery-item branding" style="position: absolute; left: 0px; top: 423px;">
-                                <div class="thumb">
-                                    <img class="img-fullwidth" src="{{ asset('frontant/images/gallery/7.jpg') }}" alt="project">
-                                    <div class="overlay-shade"></div>
-                                    <div class="text-holder">
-                                        <div class="title text-center">Sample Title</div>
-                                    </div>
-                                    <div class="icons-holder">
-                                        <div class="icons-holder-inner">
-                                            <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                                                <a href="{{ asset('frontant/images/gallery/7.jpg') }}" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Portfolio Item End -->
-
-                            <!-- Portfolio Item Start -->
-                            <div class="gallery-item photography" style="position: absolute; left: 379px; top: 423px;">
-                                <div class="thumb">
-                                    <img class="img-fullwidth" src="{{ asset('frontant/images/gallery/8.jpg') }}" alt="project">
-                                    <div class="overlay-shade"></div>
-                                    <div class="text-holder">
-                                        <div class="title text-center">Sample Title</div>
-                                    </div>
-                                    <div class="icons-holder">
-                                        <div class="icons-holder-inner">
-                                            <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                                                <a href="{{ asset('frontant/images/gallery/8.jpg') }}" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Portfolio Item End -->
-
-                            <!-- Portfolio Item Start -->
-                            <div class="gallery-item branding" style="position: absolute; left: 759px; top: 423px;">
-                                <div class="thumb">
-                                    <img class="img-fullwidth" src="{{ asset('frontant/images/gallery/4.jpg') }}" alt="project">
-                                    <div class="overlay-shade"></div>
-                                    <div class="text-holder">
-                                        <div class="title text-center">Sample Title</div>
-                                    </div>
-                                    <div class="icons-holder">
-                                        <div class="icons-holder-inner">
-                                            <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                                                <a href="{{ asset('frontant/images/gallery/4.jpg') }}" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Portfolio Item End -->
                         </div>
                         <!-- End Portfolio Gallery Grid -->
 

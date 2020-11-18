@@ -15,8 +15,7 @@ Contact Us
         <div class="section-content">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2 class="title text-white">Our  Volunteers</h2>
-
+                    <h2 class="title text-white">Our Teams</h2>
                 </div>
             </div>
         </div>
@@ -26,12 +25,20 @@ Contact Us
     <div class="container">
         <div class="section-content">
             <div class="row mb-30">
+                @foreach($categoryWiseTeam as $key => $value)
+                <div class="clearfix"></div>
+                <h2 class="mt-0 line-height-1 text-center">Our<span class="text-theme-colored">{{$value->title}}</span></h2>
+                <div class="separator separator-rouned">
+                    <i class="fa fa-cog fa-spin"></i>
+                </div>
+
+                @foreach($value->teams as $key => $team)
                 <div class="col-md-4">
                     <div class="team-member maxwidth400">
-                        <div class="thumb"><img alt="" src="{{ asset('frontant/images/team/1.jpg') }}" class="img-fullwidth"></div>
+                        <div class="thumb"><img alt="" src="frontant/team/{{ $team->image}}" class="img-fullwidth"></div>
                         <div class="info">
-                            <h4 class="mb-0">Jone doe <small>- Field Worker</small></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Consectetur adipisicing elit. Tempore provident accusamus est asperiores illum eius is.</p>
+                            <h4 class="mb-0">{{ $team->full_name }} <small>- {{ $team->designation }}</small> <small>- {{ $team->branch }}</small></h4>
+                            <p>{{ $team->short_description }}</p>
                             <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-10 mb-0">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -41,84 +48,13 @@ Contact Us
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="team-member maxwidth400">
-                        <div class="thumb"><img alt="" src="{{ asset('frontant/images/team/2.jpg') }}" class="img-fullwidth"></div>
-                        <div class="info">
-                            <h4 class="mb-0">Jone doe <small>- Field Worker</small></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Consectetur adipisicing elit. Tempore provident accusamus est asperiores illum eius is.</p>
-                            <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-10 mb-0">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="team-member maxwidth400">
-                        <div class="thumb"><img alt="" src="{{ asset('frontant/images/team/3.jpg') }}" class="img-fullwidth"></div>
-                        <div class="info">
-                            <h4 class="mb-0">Jone doe <small>- Field Worker</small></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Consectetur adipisicing elit. Tempore provident accusamus est asperiores illum eius is.</p>
-                            <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-10 mb-0">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+                @endforeach
+                @endforeach
+
+
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="team-member maxwidth400">
-                        <div class="thumb"><img alt="" src="{{ asset('frontant/images/team/4.jpg') }}" class="img-fullwidth"></div>
-                        <div class="info">
-                            <h4 class="mb-0">Jone doe <small>- Field Worker</small></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Consectetur adipisicing elit. Tempore provident accusamus est asperiores illum eius is.</p>
-                            <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-10 mb-0">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="team-member maxwidth400">
-                        <div class="thumb"><img alt="" src="{{ asset('frontant/images/team/5.jpg') }}" class="img-fullwidth"></div>
-                        <div class="info">
-                            <h4 class="mb-0">Jone doe <small>- Field Worker</small></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Consectetur adipisicing elit. Tempore provident accusamus est asperiores illum eius is.</p>
-                            <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-10 mb-0">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="team-member maxwidth400">
-                        <div class="thumb"><img alt="" src="{{ asset('frontant/images/team/6.jpg') }}" class="img-fullwidth"></div>
-                        <div class="info">
-                            <h4 class="mb-0">Jone doe <small>- Field Worker</small></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Consectetur adipisicing elit. Tempore provident accusamus est asperiores illum eius is.</p>
-                            <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-10 mb-0">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>

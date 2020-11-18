@@ -1,6 +1,6 @@
 @extends('backend_layouts.app')
 @section('title')
-Add new photo 
+Add new photo
 @endsection
 @section('title')
 Photo Add
@@ -20,7 +20,7 @@ Photo Add
         </ul>
         <ul class="breadcrumb pull-right">
             <li>
-                <a title="Add New Historical Place" class="financeAddPermission btn btn-sm btn-success" href="{{ route('photo.index') }}">
+                <a title="Add New Photo" class="financeAddPermission btn btn-sm btn-success" href="{{ route('photo.index') }}">
                     <i class="ace-icon fa fa-list"></i>
                     List
                 </a>
@@ -33,6 +33,33 @@ Photo Add
         <div class="col-md-12">
             <form action="{{ route('photo.store') }}" method="post" class="form-horizontal" enctype="multipart/form-data">
                 {{csrf_field()}}
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1">Category<span style="color:red!important"> *</span></label>
+                    <div class="col-sm-8">
+                        <select class="form-control" name="category_id">
+                            @foreach($category as $key => $value)
+                            <option value="{{ $value->id }}">{{ $value->title }}</option>
+                            @endforeach
+
+                        </select>
+                        @error('category_id')
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+                            <strong>
+                                <i class="ace-icon fa fa-check"></i>
+                                Warning!
+                            </strong>
+                            {{ $message }}
+                            <br />
+                        </div>
+                        @enderror
+
+                    </div>
+                </div>
+
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Title <span style="color:red!important"> *</span></label>
@@ -54,7 +81,7 @@ Photo Add
 
                     </div>
                 </div>
-                
+
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Image<span style="color:red!important"> *</span></label>
@@ -126,5 +153,5 @@ Photo Add
 
 
     @section('script')
-    
+
     @endsection

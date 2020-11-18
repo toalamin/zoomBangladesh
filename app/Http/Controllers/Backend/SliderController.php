@@ -103,7 +103,7 @@ class SliderController extends Controller
 
         $file = $request->file('file');
         $file_name = microtime() . time() . '.' . $file->getClientOriginalExtension();
-        $path = base_path('/uploads/slider/');
+        $path = public_path().'/frontant/slider/';
         //Check if the directory already exists.
         if (!is_dir($path)) {
             //Directory does not exist, so lets create it.

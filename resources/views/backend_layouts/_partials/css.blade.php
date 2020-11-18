@@ -1,4 +1,5 @@
 <!-- bootstrap & fontawesome -->
+<link href="{{ asset('frontant/images/favicon.png') }}" rel="shortcut icon" type="image/png">
 <link rel="stylesheet" href="{{ asset('backend/asset/assets/css/bootstrap.css')}}" />
 <link rel="stylesheet" href="{{  asset('backend/asset/assets/css/font-awesome.css')}}" />
   

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\models\Photo;
+use App\models\Gallery_category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
@@ -17,7 +18,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        $photo = Photo::all();
+        $photo = Photo::with('category')->get();
         return view('backend.photo.index', get_defined_vars());
     }
 
@@ -28,6 +29,14 @@ class PhotoController extends Controller
      */
     public function create()
     {
+
+        $category = Gallery_category::all();
+
+        // echo "<pre>";
+        // print_r($category);
+        // die();
+
+
         return view('backend.photo.create', get_defined_vars());
     }
 
@@ -40,8 +49,8 @@ class PhotoController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'category_id' => 'required|max:200',
             'title' => 'required|unique:photos|max:200',
-           
             'file' => 'required | mimes:jpeg,jpg',
         ]);
 
@@ -53,6 +62,7 @@ class PhotoController extends Controller
         $photo = new Photo();
         $photo->image = $logo ?? null;
         $photo->title = $request->title;
+        $photo->category_id = $request->category_id;
         $photo->visibility = $request->status;
         $photo->save();
         alert()->success('New photo added.', 'Successfully!');
@@ -78,8 +88,9 @@ class PhotoController extends Controller
      */
     public function edit($id)
     {
+        $category = Gallery_category::all();
         $photo = Photo::findorFail($id);
-        return view('backend.photo.edit',get_defined_vars());
+        return view('backend.photo.edit', get_defined_vars());
     }
 
     /**
@@ -93,6 +104,7 @@ class PhotoController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required|max:200|unique:photos,title,' . $id,
+            'category_id' => 'required',
             'file' => 'nullable|mimes:jpeg,jpg',
 
         ]);
@@ -126,7 +138,7 @@ class PhotoController extends Controller
 
         $file = $request->file('file');
         $file_name = microtime() . time() . '.' . $file->getClientOriginalExtension();
-        $path = base_path('/uploads/photo/');
+        $path = public_path().'/frontant/photo/';
         //Check if the directory already exists.
         if (!is_dir($path)) {
             //Directory does not exist, so lets create it.
@@ -134,7 +146,7 @@ class PhotoController extends Controller
         }
 
         Image::make($file)
-            ->resize(500, 400)
+            ->resize(800, 600)
             ->save($path . $file_name);
         return $file_name;
     }

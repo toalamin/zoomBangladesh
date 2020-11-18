@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Backend;
 
 use App\models\Video;
+use App\models\Gallery_category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
+
 class VideoController extends Controller
 {
     /**
@@ -16,8 +18,8 @@ class VideoController extends Controller
      */
     public function index()
     {
-        $video = Video::all();
-        return view('backend.videos.index',get_defined_vars());
+        $video = Video::with('category')->get();
+        return view('backend.videos.index', get_defined_vars());
     }
 
     /**
@@ -27,7 +29,8 @@ class VideoController extends Controller
      */
     public function create()
     {
-        return view('backend.videos.create',get_defined_vars());
+        $category = Gallery_category::all();
+        return view('backend.videos.create', get_defined_vars());
     }
 
     /**
@@ -40,16 +43,18 @@ class VideoController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required|unique:videos|max:200',
+            'category_id' => 'required|max:800',
             'link' => 'required|max:800',
-           
+
         ]);
 
         if ($validator->fails()) {
             alert()->warning('Validation Error', 'Error');
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        
+
         $video = new Video();
+        $video->category_id = $request->category_id;
         $video->link = $request->link;
         $video->title = $request->title;
         $video->visibility = $request->status;
@@ -77,8 +82,9 @@ class VideoController extends Controller
      */
     public function edit($id)
     {
+        $category = Gallery_category::all();
         $video = Video::findorFail($id);
-        return view('backend.videos.edit',get_defined_vars());
+        return view('backend.videos.edit', get_defined_vars());
     }
 
     /**
@@ -92,15 +98,17 @@ class VideoController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required|max:200|unique:videos,title,' . $id,
+            'category_id' => 'required|max:800',
             'link' => 'required|max:800',
         ]);
         if ($validator->fails()) {
             alert()->warning('Validation Error', 'Error');
             return redirect()->back()->withErrors($validator)->withInput();
         }
-      
+
         $video = new Video();
         $data = [
+            'category_id' => $request->category_id,
             'title' => $request->title,
             'link' =>  $request->link,
             'visibility' => $request->status,
