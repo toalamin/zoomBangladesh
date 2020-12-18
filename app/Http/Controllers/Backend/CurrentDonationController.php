@@ -110,8 +110,8 @@ class CurrentDonationController extends Controller
     {
         if (!$request->hasFile('image')) return null;
         $file = $request->file('image');
-        $file_name = microtime() . time() . '.' . $file->getClientOriginalExtension();
-        $path = public_path() . '/frontant/currentDonation/';
+        $file_name =time().'.'.$file->getClientOriginalExtension();
+        $path = base_path().'/frontant/currentDonation/';
         //Check if the directory already exists.
         if (!is_dir($path)) {
             //Directory does not exist, so lets create it.
@@ -119,7 +119,7 @@ class CurrentDonationController extends Controller
         }
         Image::make($file)
             ->resize(500, 300)
-            ->save($path . $file_name);
+            ->save($path.$file_name);
         return $file_name;
     }
 }

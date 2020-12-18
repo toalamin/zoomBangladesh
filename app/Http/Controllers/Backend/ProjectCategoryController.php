@@ -128,7 +128,7 @@ class ProjectCategoryController extends Controller
 
         $file = $request->file('image');
         $file_name = microtime() . time() . '.' . $file->getClientOriginalExtension();
-        $path = public_path() . '/frontant/projectCategory/';
+        $path = base_path() . '/frontant/projectCategory/';
         //Check if the directory already exists.
         if (!is_dir($path)) {
             //Directory does not exist, so lets create it.

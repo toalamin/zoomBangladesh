@@ -27,7 +27,7 @@ Contact Us
             <div class="row mb-30">
                 @foreach($categoryWiseTeam as $key => $value)
                 <div class="clearfix"></div>
-                <h2 class="mt-0 line-height-1 text-center">Our<span class="text-theme-colored">{{$value->title}}</span></h2>
+                <h2 class="mt-0 line-height-1 text-center">Our <span class="text-theme-colored"> {{$value->title}}</span></h2>
                 <div class="separator separator-rouned">
                     <i class="fa fa-cog fa-spin"></i>
                 </div>
@@ -35,7 +35,15 @@ Contact Us
                 @foreach($value->teams as $key => $team)
                 <div class="col-md-4">
                     <div class="team-member maxwidth400">
-                        <div class="thumb"><img alt="" src="frontant/team/{{ $team->image}}" class="img-fullwidth"></div>
+
+                        <?php if (!empty($team->image)) : ?>
+                            <div class="thumb"><img alt="" src="frontant/team/{{$team->image}}" class="img-fullwidth"></div>
+                        <?php else : ?>
+                            <div class="thumb"><img alt="" src="default.jpg" class="img-fullwidth"></div>
+
+                        <?php endif; ?>
+
+
                         <div class="info">
                             <h4 class="mb-0">{{ $team->full_name }} <small>- {{ $team->designation }}</small> <small>- {{ $team->branch }}</small></h4>
                             <p>{{ $team->short_description }}</p>

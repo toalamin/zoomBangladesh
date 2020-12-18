@@ -50,10 +50,16 @@ photo  List
                         @foreach($photo as $key => $value)
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ $value->category->title }}</td>
+                            <td>{{ isset($value->category->title) ? $value->category->title : '' }}</td>
                             <td>{{ $value->title }}</td>
                          
-                            <td><img src="/frontant/photo/{{ $value->image }}" height="50px" width="50px" /></td>
+                            <td>
+                                <?php if(!empty($value->image)): ?>
+                            <img src="/frontant/photo/{{ $value->image }}" height="50px" width="50px" />
+                        <?php else: ?>
+                            <img src="default.jpg" height="50px" width="50px" />
+                            <?php endif;?>
+                        </td>
                             <td>
                                 @if ($value->visibility === 1)
 

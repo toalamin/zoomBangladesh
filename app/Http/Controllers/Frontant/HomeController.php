@@ -21,9 +21,7 @@ class HomeController extends Controller
     $misson = Mission::first();
     $sponsor = Sponsoors::where('visibility', 1)->get();
     $people = PeopleSay::where('visibility', 1)->get();
-    // echo "<pre>";
-    // print_r($sponsor);
-    // die;
+    
 
 
 
@@ -32,6 +30,8 @@ class HomeController extends Controller
     $complteteProject = Project_category::where('visible', 2)->get();
     $monthlyEmployee = MonthlyEmployee::with('team')->where('type',1)->where('visibility', 1)->get();
     $yearlyEmployee = MonthlyEmployee::with('team')->where('type',2)->where('visibility', 1)->get();
+
+    
     return view('frontant/home', get_defined_vars());
   }
 }

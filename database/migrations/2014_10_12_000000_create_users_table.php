@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone')->nullable();
+            $table->tinyInteger('user_type')->nullable()->comment('1=master,2=user');
             $table->tinyInteger('branch_id')->nullable();
             $table->string('email')->unique();
             $table->string('address')->nullable();

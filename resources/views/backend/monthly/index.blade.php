@@ -49,7 +49,16 @@ How Can Help Us
                         </tr>
                     </thead>
                     <tbody>
+                        <?php if(!empty($monthly)): ?>
                         @foreach($monthly as $key => $value)
+
+<?php
+                            // echo "<pre>";
+                            // print_r($value->team->full_name);
+                            // die();
+
+?>
+
                         <tr>
                             <td>{{ $key+1 }}</td>
                             <td>@if($value->type == 1) Monthly @else Yearly @endif</td>
@@ -71,6 +80,7 @@ How Can Help Us
                             </td>
                         </tr>
                         @endforeach
+                        <?php endif;?>
 
                     </tbody>
 

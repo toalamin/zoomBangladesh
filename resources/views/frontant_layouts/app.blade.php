@@ -14,14 +14,7 @@
 </head>
 <body class="">
   <div id="wrapper">
-    <!-- preloader -->
-    <div id="preloader">
-      <div id="spinner">
-        <i class="flaticon-charity-shelter font-60 text-theme-colored floating"></i>
-        <h5 class="line-height-50 font-18">Loading...</h5>
-      </div>
-      <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
-    </div>
+    
     <!-- Header -->
     <header class="header">
       @include('frontant_layouts._partials.headertop')
@@ -61,6 +54,27 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+(function () {
+var options = {
+facebook: "1064515673595542", // Facebook page ID
+whatsapp: "01618216985", // WhatsApp number
+call_to_action: "Message us", // Call to action
+button_color: "#E74339", // Color of button
+position: "left", // Position may be 'right' or 'left'
+order: "facebook,whatsapp", // Order of buttons
+};
+var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+})();
+</script>
+<!-- /GetButton.io widget -->
+
+
+
 </body>
 
 </html>

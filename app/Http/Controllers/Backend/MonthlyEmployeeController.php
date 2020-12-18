@@ -19,6 +19,11 @@ class MonthlyEmployeeController extends Controller
     public function index()
     {
         $monthly = MonthlyEmployee::with('team')->get();
+
+        
+
+
+
         return view('backend.monthly.index', get_defined_vars());
     }
 

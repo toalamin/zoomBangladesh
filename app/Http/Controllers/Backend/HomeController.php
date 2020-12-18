@@ -66,8 +66,8 @@ class HomeController extends Controller
             'instagram_link' => 'nullable|max:200',
             'twitter_link' => 'nullable|max:200',
             'linkedin' => 'nullable|max:200',
-            'logo' => 'required | mimes:jpeg,jpg,png',
-            'default_banner_image' => 'required | mimes:jpeg,jpg,png',
+            'logo' => 'nullable',
+            'default_banner_image' => 'nullable',
         ]);
 
         if ($validator->fails()) {
@@ -86,8 +86,8 @@ class HomeController extends Controller
         $systemInfo->email = $request->email;
         $systemInfo->phone = $request->phone;
         $systemInfo->address = $request->address;
-        $systemInfo->logo = $logo;
-        $systemInfo->default_banner_image = $bannar;
+        $systemInfo->logo = $logo ?? $request->old_logo;
+        $systemInfo->default_banner_image = $bannar ?? $request->old_banner;
         $systemInfo->fb_link = $request->fb_link;
         $systemInfo->youtube_link = $request->youtube_link;
         $systemInfo->skypee = $request->skypee;
@@ -105,7 +105,7 @@ class HomeController extends Controller
 
         $file = $request->file('logo');
         $file_name = microtime() . time() . '.' . $file->getClientOriginalExtension();
-        $path = public_path().'/frontant/images/logo/';
+        $path = base_path().'/frontant/images/logo/';
         //Check if the directory already exists.
         if (!is_dir($path)) {
             //Directory does not exist, so lets create it.
@@ -125,7 +125,7 @@ class HomeController extends Controller
 
         $file = $request->file('default_banner_image');
         $file_name = microtime() . time() . '.' . $file->getClientOriginalExtension();
-        $path = public_path().'/frontant/images/banner/';
+        $path = base_path().'/frontant/images/banner/';
         //Check if the directory already exists.
         if (!is_dir($path)) {
             //Directory does not exist, so lets create it.

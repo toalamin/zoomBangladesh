@@ -1,15 +1,23 @@
+<?php 
+
+use App\models\SystemConfig;
+use App\models\Update;
+$config = SystemConfig::first();
+$update = Update::offset(0)->limit(4)->get();
+
+?>
+
 <footer id="footer" class="bg-black-222" style="color:#a9a9a9!important;">
   <div class="container pt-80 pb-30">
     <div class="row border-bottom-black">
       <div class="col-sm-6 col-md-3">
         <div class="widget dark">
-          <img class="mb-20" alt="" src="{{ asset('frontant/images/ezb-foundation.png') }}">
-
-          <p>22 Segun Bagicha, Chittagong Hotel(4th Floor), Dhaka-1000.</p>
+          <img class="mb-20" alt="" src="frontant/images/logo/{{ $config->logo }}">
+          <p><?php echo $config->address ?></p>
           <ul class="list-inline mt-5">
-            <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored mr-5"></i> <a class="text-gray" href="#">01743732845</a> </li>
-            <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-colored mr-5"></i> <a class="text-gray" href="#">info@ezbfoundation.org</a> </li>
-            <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-colored mr-5"></i> <a class="text-gray" href="#">http://ezbfoundation.org</a> </li>
+            <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored mr-5"></i> <a class="text-gray" href="#">{{ $config->phone }}</a> </li>
+            <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-colored mr-5"></i> <a class="text-gray" href="#">{{ $config->email }}</a> </li>
+            <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-colored mr-5"></i> <a class="text-gray" href="#">{{ $config->website }}</a> </li>
           </ul>
         </div>
       </div>
@@ -27,35 +35,24 @@
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="widget dark">
-          <h5 class="widget-title line-bottom">Twitter Feed</h5>
+          <h5 class="widget-title line-bottom">Latest Project</h5>
           <div class="twitter-feed list-border clearfix" data-username="Envato" data-count="2"></div>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="widget dark">
-          <h5 class="widget-title line-bottom">Latest News</h5>
+          <h5 class="widget-title line-bottom">Latest Update</h5>
           <div class="latest-posts">
+            @foreach($update as $updates)
             <article class="post media-post clearfix pb-0 mb-10">
-              <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
+              <a href="{{ route('update.details',$updates->id) }}"  class="post-thumb"><img height="50px" width="50px" alt="" src="frontant/update/{{$updates->image}}"></a>
               <div class="post-right">
-                <h5 class="post-title mt-0 mb-5"><a href="#">Sustainable Construction</a></h5>
-                <p class="post-date mb-0 font-12">Mar 08, 2015</p>
+                <h5 class="post-title mt-0 mb-5"><a href="{{ route('update.details',$updates->id) }}">{{ $updates->title }}</a></h5>
+                <p class="post-date mb-0 font-12">{{ $updates->date }}</p>
               </div>
             </article>
-            <article class="post media-post clearfix pb-0 mb-10">
-              <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-              <div class="post-right">
-                <h5 class="post-title mt-0 mb-5"><a href="#">Industrial Coatings</a></h5>
-                <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-              </div>
-            </article>
-            <article class="post media-post clearfix pb-0 mb-10">
-              <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-              <div class="post-right">
-                <h5 class="post-title mt-0 mb-5"><a href="#">Storefront Installations</a></h5>
-                <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-              </div>
-            </article>
+            @endforeach
+            
           </div>
         </div>
       </div>
@@ -101,8 +98,8 @@
         <div class="widget dark">
           <h5 class="widget-title mb-10">Call Us Now</h5>
           <div class="text-gray">
-            01739-801419 <br>
-            ezbfoundation@gmail.com
+            {{$config->phone}} <br>
+            {{$config->email}}
           </div>
         </div>
       </div>
@@ -110,12 +107,12 @@
         <div class="widget dark">
           <h5 class="widget-title mb-10">Connect With Us</h5>
           <ul class="styled-icons icon-dark icon-circled icon-sm">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-skype"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+            <li><a target="_blank" href="{{ $config->fb_link }}"><i class="fa fa-facebook"></i></a></li>
+            <li><a target="_blank" href="{{ $config->twitter_link }}"><i class="fa fa-twitter"></i></a></li>
+            <li><a target="_blank" href="{{ $config->skypee }}"><i class="fa fa-skype"></i></a></li>
+            <li><a target="_blank" href="{{ $config->youtube_link }}"><i class="fa fa-youtube"></i></a></li>
+            <li><a target="_blank" href="{{ $config->instagram_link }}"><i class="fa fa-instagram"></i></a></li>
+            <li><a target="_blank" href="{{ $config->linkedin }}"><i class="fa fa-linkedin"></i></a></li>
           </ul>
         </div>
       </div>
@@ -131,15 +128,15 @@
           <div class="widget no-border m-0">
             <ul class="list-inline sm-text-center mt-5 font-12">
               <li>
-                <a href="#">FAQ</a>
+                <a href="{{ route('faq.page') }}">FAQ</a>
               </li>
               <li>|</li>
               <li>
-                <a href="#">Help Desk</a>
+                <a href="{{ route('faq.page') }}">Help Desk</a>
               </li>
               <li>|</li>
               <li>
-                <a href="#">Support</a>
+                <a href="{{ route('faq.page') }}">Support</a>
               </li>
             </ul>
           </div>

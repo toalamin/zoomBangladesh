@@ -95,7 +95,10 @@ class TeamController extends Controller
             alert()->warning('Validation Error3', 'Error');
             return redirect()->back()->withErrors($validator)->withInput();
         }
+        if ($request->hasFile('image')):
         $logo = $this->uploadSliderImage($request);
+       // echo $logo;die("stop");
+        endif;
         $team = new Team();
         $data = [
             'team_category_id' => $request->team_category_id,
@@ -129,8 +132,8 @@ class TeamController extends Controller
         if (!$request->hasFile('image')) return null;
 
         $file = $request->file('image');
-        $file_name = microtime() . time() . '.' . $file->getClientOriginalExtension();
-        $path = public_path() . '/frontant/team/';
+        $file_name =time().'.'.$file->getClientOriginalExtension();
+        $path = base_path() . '/frontant/team/';
         //Check if the directory already exists.
         if (!is_dir($path)) {
             //Directory does not exist, so lets create it.
@@ -140,7 +143,7 @@ class TeamController extends Controller
 
         Image::make($file)
             ->resize(360, 300)
-            ->save($path . $file_name);
+            ->save($path.$file_name);
 
         return $file_name;
     }

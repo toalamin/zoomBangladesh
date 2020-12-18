@@ -137,6 +137,9 @@ Edit System Config
                     <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Logo <span style="color:red!important"> *</span></label>
                     <div class="col-sm-8">
                         <input type="file" name="logo" class="form-control  " placeholder="Phone" />
+                            
+                            <input type="hidden" name="old_logo" value="{{$systemConfig->logo}}" class="form-control  " placeholder="Phone" />
+                        
                         <img src="/frontant/images/logo/{{$systemConfig->logo}}" height="50px" width="50px"/>
                         @error('logo')
                         <div class="alert alert-danger">
@@ -160,6 +163,9 @@ Edit System Config
                     <div class="col-sm-8">
                         <input type="file" name="default_banner_image" class="form-control  " placeholder="Phone" />
                         <img src="/frontant/images/banner/{{$systemConfig->default_banner_image}}" height="50px" width="50px"/>
+                        
+                        <input type="hidden" name="old_banner" value="{{$systemConfig->default_banner_image}}" class="form-control  " placeholder="Phone" />
+                        
                         @error('default_banner_image')
                         <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">

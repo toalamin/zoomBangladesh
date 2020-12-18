@@ -43,6 +43,7 @@ User List
                             <th width="10%">E-amil</th>
                             <th width="10%">Phone</th>
                             <th width="10%">Address</th>
+                            <th width="10%">Type</th>
                             <th width="10%">Status</th>
                             <th width="10%">Action</th>
                         </tr>
@@ -55,6 +56,14 @@ User List
                             <td>{{ $value->email }}</td>
                             <td>{{ $value->phone }}</td>
                             <td>{{ $value->address }}</td>
+                            <td>
+                                @if ($value->user_type === 1)
+                                <span class="label label-lg label-success arrowed-in arrowed-in-right">Master</span>
+                                @else
+                                <span class="label label-lg label-danger arrowed-in arrowed-in-right">User</span>
+                                @endif
+                            </td>
+
                             <td>
                                 @if ($value->visibility === 1)
 

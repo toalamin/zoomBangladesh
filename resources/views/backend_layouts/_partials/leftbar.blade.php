@@ -314,55 +314,9 @@
 
 
 
-		<li class="">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-user-plus"></i>
-				<span class="menu-text">
-					Contact
-				</span>
 
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
 
-			<b class="arrow"></b>
 
-			<ul class="submenu">
-				<li class="">
-					<a href="{{ route('contact.index') }}">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Contact List
-					</a>
-				</li>
-			</ul>
-		</li>
-
-		<li class="">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-user-plus"></i>
-				<span class="menu-text">
-					Donation
-				</span>
-
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-
-			<b class="arrow"></b>
-
-			<ul class="submenu">
-				<li class="">
-					<a href="{{ route('donation.list') }}">
-						<i class="menu-icon fa fa-caret-right"></i>
-						People Donation List
-					</a>
-				</li>
-				<li class="">
-					<a href="{{ route('current.index') }}">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Current Donation
-					</a>
-				</li>
-			</ul>
-		</li>
 
 
 
@@ -407,6 +361,82 @@
 
 
 
+
+
+
+
+		<!-- <li class="">
+			<a href="#" class="dropdown-toggle">
+				<i class="menu-icon fa fa-envelope"></i>
+				<span class="menu-text">
+					Header Image
+				</span>
+
+				<b class="arrow fa fa-angle-down"></b>
+			</a>
+
+			<b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class="">
+					<a href="{{ route('header.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						List
+					</a>
+				</li>
+			</ul>
+		</li> -->
+
+		@if(Auth::user()->user_type == 1)
+
+		<li class="">
+			<a href="#" class="dropdown-toggle">
+				<i class="menu-icon fa fa-user-plus"></i>
+				<span class="menu-text">
+					Contact
+				</span>
+
+				<b class="arrow fa fa-angle-down"></b>
+			</a>
+
+			<b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class="">
+					<a href="{{ route('contact.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Contact List
+					</a>
+				</li>
+			</ul>
+		</li>
+		<li class="">
+			<a href="#" class="dropdown-toggle">
+				<i class="menu-icon fa fa-user-plus"></i>
+				<span class="menu-text">
+					Donation
+				</span>
+
+				<b class="arrow fa fa-angle-down"></b>
+			</a>
+
+			<b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class="">
+					<a href="{{ route('donation.list') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						People Donation List
+					</a>
+				</li>
+				<li class="">
+					<a href="{{ route('current.index') }}">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Current Donation
+					</a>
+				</li>
+			</ul>
+		</li>
 		<li class="">
 			<a href="#" class="dropdown-toggle">
 				<i class="menu-icon fa fa-pie-chart"></i>
@@ -428,33 +458,6 @@
 				</li>
 			</ul>
 		</li>
-
-
-
-		<li class="">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-envelope"></i>
-				<span class="menu-text">
-					Header Image
-				</span>
-
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-
-			<b class="arrow"></b>
-
-			<ul class="submenu">
-				<li class="">
-					<a href="{{ route('header.index') }}">
-						<i class="menu-icon fa fa-caret-right"></i>
-						List
-					</a>
-				</li>
-			</ul>
-		</li>
-
-
-
 		<li class="">
 			<a href="#" class="dropdown-toggle">
 				<i class="menu-icon fa fa-user"></i>
@@ -489,7 +492,7 @@
 				</li>
 			</ul>
 		</li>
-
+		@endif
 	</ul><!-- /.nav-list -->
 
 	<!-- #section:basics/sidebar.layout.minimize -->

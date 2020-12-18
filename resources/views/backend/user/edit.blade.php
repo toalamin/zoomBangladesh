@@ -30,7 +30,28 @@ User Edit
         <div class="col-md-12">
             <form action="{{ route('user.update',$user->id) }}" method="post" class="form-horizontal" enctype="multipart/form-data">
                 {{csrf_field()}}
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1">Status<span style="color:red!important"> *</span></label>
+                    <div class="col-sm-8">
+                        <select class="form-control" name="user_type">
+                            <option @if(old('user_type') == 1) selected @endif value="1">Master</option>
+                            <option @if(old('user_type') == 2) selected @endif value="2">User</option>
+                        </select>
+                        <!-- <div  class="alert alert-danger">
+                                    <button type="button" class="close" data-dismiss="alert">
+                                        <i class="ace-icon fa fa-times"></i>
+                                    </button>
+                                    <strong>
+                                        <i class="ace-icon fa fa-check"></i>
+                                        Warning!
+                                    </strong>
 
+                                
+                                    <br />
+                                </div> -->
+
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Name <span style="color:red!important"> *</span></label>
                     <div class="col-sm-8">

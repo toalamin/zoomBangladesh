@@ -42,7 +42,7 @@ class AccountController extends Controller
     {
         $validator = Validator::make($request->all(), [
 
-            'name' => 'required|unique:accounts|max:200',
+            'name' => 'required|unique:accounts|max:500',
             'description' => 'required',
 
 
@@ -96,7 +96,7 @@ class AccountController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:200|unique:accounts,name,' . $id,
-            'description' => 'required|max:200',
+            'description' => 'required|max:500',
 
 
 

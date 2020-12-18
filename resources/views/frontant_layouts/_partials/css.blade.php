@@ -1,10 +1,6 @@
 
 <!-- Favicon and Touch Icons -->
-<link href="{{ asset('frontant/images/favicon.png') }}" rel="shortcut icon" type="image/png">
-<link href="{{ asset('frontant/images/apple-touch-icon.png') }}" rel="apple-touch-icon">
-<link href="{{ asset('frontant/images/apple-touch-icon-72x72.png') }}" rel="apple-touch-icon" sizes="72x72">
-<link href="{{ asset('frontant/images/apple-touch-icon-114x114.png') }}" rel="apple-touch-icon" sizes="114x114">
-<link href="{{ asset('frontant/images/apple-touch-icon-144x144.png') }}" rel="apple-touch-icon" sizes="144x144">
+<link href="{{ asset('frontant/images/favicon_.png') }}" rel="shortcut icon" type="image/png">
 <!-- Stylesheet -->
 <link href="{{ asset('frontant/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('frontant/css/jquery-ui.min.css') }}" rel="stylesheet" type="text/css">

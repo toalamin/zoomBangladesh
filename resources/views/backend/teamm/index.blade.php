@@ -54,7 +54,7 @@ Slider List
                         @foreach($team as $key => $value)
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ $value->category->title }}</td>
+                            <td>{{ isset($value->category->title) ? $value->category->title: '' }}</td>
                             <td>{{ $value->full_name }}</td>
                             <td>{{ $value->branch }}</td>
                             <td>{{ $value->designation }}</td>

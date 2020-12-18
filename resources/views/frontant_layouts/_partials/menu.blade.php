@@ -2,7 +2,7 @@
     <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
         <div class="container">
             <nav id="menuzord-right" class="menuzord green no-bg">
-                <a href="{{ route('index') }}" class="menuzord-brand pull-left flip"><img height="100px" src="{{ asset('frontant/images/ezb-foundation.png') }}" alt=""></a>
+                <a href="{{ route('index') }}" style="margin-top:3px!important" class="menuzord-brand pull-left flip"><img height="120px" src="{{ asset('frontant/images/update_logo.jpg') }}" alt=""></a>
                 <ul class="menuzord-menu">
                     <li class="active"><a href="{{ route('index') }}">Home</a></li>
                     <li><a href="#">About</a>

@@ -139,7 +139,7 @@ class UpdateController extends Controller
 
         $file = $request->file('file');
         $file_name = microtime() . time() . '.' . $file->getClientOriginalExtension();
-        $path = public_path().'/frontant/update/';
+        $path = base_path().'/frontant/update/';
         //Check if the directory already exists.
         if (!is_dir($path)) {
             //Directory does not exist, so lets create it.

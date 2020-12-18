@@ -98,8 +98,8 @@ class FundraiseController extends Controller
         if (!$request->hasFile('file')) return null;
 
         $file = $request->file('file');
-        $file_name = microtime() . time() . '.' . $file->getClientOriginalExtension();
-        $path = public_path().'/frontant/fundraise/';
+        $file_name =time().'.'.$file->getClientOriginalExtension();
+        $path = base_path().'/frontant/fundraise/';
         //Check if the directory already exists.
         if (!is_dir($path)) {
             //Directory does not exist, so lets create it.

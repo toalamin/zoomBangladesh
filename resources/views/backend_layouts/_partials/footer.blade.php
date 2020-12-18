@@ -3,7 +3,7 @@
 					<!-- #section:basics/footer -->
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Sadullahpur</span>
+							<span class="blue bolder">Zoom Bangladesh</span>
 							toalamin &copy; 2013-2014
 						</span>
 

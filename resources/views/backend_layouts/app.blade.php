@@ -46,7 +46,7 @@
 				<!-- #section:basics/footer -->
 				<div class="footer-content">
 					<span class="bigger-120">
-						<span class="blue bolder">Sadullapur</span>
+						<span class="blue bolder">Zoom Bangladesh</span>
 						Md.Al Amin &copy; <?php echo date('Y'); ?>-<?php echo date('Y'); ?>
 					</span>
 

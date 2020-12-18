@@ -109,7 +109,7 @@ class PeopleSayController extends Controller
 
         $file = $request->file('image');
         $file_name = microtime() . time() . '.' . $file->getClientOriginalExtension();
-        $path = public_path() . '/frontant/people/';
+        $path = base_path() . '/frontant/people/';
         //Check if the directory already exists.
         if (!is_dir($path)) {
             //Directory does not exist, so lets create it.

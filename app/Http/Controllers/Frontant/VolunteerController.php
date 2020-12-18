@@ -77,6 +77,7 @@ class VolunteerController extends Controller
         $team->gender = $request->gender;
         $team->district = $request->district;
         $team->divission = $request->divission;
+        $team->team_category_id = 1;
         $team->save();
         alert()->success('Your application successfully received.', 'Successfully!');
         return redirect()->route('volunteer.page');

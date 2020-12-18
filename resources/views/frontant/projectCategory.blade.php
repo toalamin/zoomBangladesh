@@ -60,7 +60,7 @@ Contact Us
                                 $result = str_replace("<p>", "", $result);
 
                                 ?>
-                                <!-- <p><?php// echo substr($result, 0, 200);  ?></p> -->
+                              
                                 <ul class="list-inline clearfix mt-20">
                                     <li class="pull-left pr-0">Raised: {{ $value->raise }}</li>
                                     <li class="text-theme-colored pull-right pr-0">Goal: {{ $value->goal }}</li>

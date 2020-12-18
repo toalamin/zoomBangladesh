@@ -35,7 +35,12 @@ Adviser Committe List
 
           <div class="row">
             <div class=" col-md-5  text-white">
+            <?php if(!empty($current->image)): ?>
+
               <img src="frontant/currentDonation/{{$current->image }}" />
+              <?php else: ?>
+                <img src="default.jpg" />
+                <?php endif;?>
             </div>
             <div class=" col-md-7  text-white">
               <div class=" col-md-4 text-white">
@@ -44,7 +49,7 @@ Adviser Committe List
                     <div class="funfact-icon">
                       <i class="pe-7s-smile font-50 text-white"></i>
                     </div>
-                    <h2 style="color:white!important;" data-animation-duration="2000" data-value="{{$current->raised}}" class="animate-number text-theme-colored font-30 mt-10">0</h2>
+                    <h2 style="color:white!important;" data-animation-duration="2000" data-value="{{isset($current->raised) ? $current->raised : '' }}" class="animate-number text-theme-colored font-30 mt-10">0</h2>
                     <h4 class="text-uppercase text-white">RAISED</h4>
                     <p>Raised Project Demand</p>
                   </div>
@@ -56,7 +61,7 @@ Adviser Committe List
                     <div class="funfact-icon">
                       <i class="pe-7s-add-user font-50 text-white"></i>
                     </div>
-                    <h2  style="color:white!important;" data-animation-duration="2000" data-value="{{$current->goal}}" class="animate-number text-theme-colored font-30 mt-10">0</h2>
+                    <h2  style="color:white!important;" data-animation-duration="2000" data-value="{{isset($current->goal) ? $current->goal : ''}}" class="animate-number text-theme-colored font-30 mt-10">0</h2>
                     <h4 class="text-uppercase text-white">Goal</h4>
                     <p>Goal Project Target</p>
                   </div>
@@ -68,7 +73,7 @@ Adviser Committe List
                     <div class="funfact-icon">
                       <i class="pe-7s-rocket font-50 text-white"></i>
                     </div>
-                    <h2  style="color:white!important;" data-animation-duration="2000" data-value="{{$current->success}}" class="animate-number text-theme-colored font-30 mt-10">0</h2>
+                    <h2  style="color:white!important;" data-animation-duration="2000" data-value="{{isset($current->success) ? $current->success : ''}}" class="animate-number text-theme-colored font-30 mt-10">0</h2>
                     <h4 class="text-uppercase text-white">Success </h4>
                     <p>Success Project Demand</p>
                   </div>
@@ -77,7 +82,7 @@ Adviser Committe List
 
               <div class="col-md-12 text-white">
                 <hr>
-                <p>{{$current->description}}</p>
+                <p>{{isset($current->description) ? $current->description : ''}}</p>
               </div>
 
             </div>

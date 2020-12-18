@@ -53,7 +53,7 @@ FAQ List
                             <td>{{ $key+1 }}</td>
                             <td> @if($value->type == 1) English @else Bangla @endif</td>
                             <td>{{ $value->question }}</td>
-                            <td>{{ $value->answer }}</td>
+                            <td><?php echo $value->answer ?></td>
                             <td>
                                 @if ($value->visibility === 1)
                                 <span class="label label-lg label-success arrowed-in arrowed-in-right">Active</span>

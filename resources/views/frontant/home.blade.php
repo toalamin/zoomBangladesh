@@ -8,7 +8,7 @@ Welcome to Zoom Bangladesh
 <!-- @include('frontant_layouts._partials.slider') -->
 <section id="home">
   <div class="container-fluid p-0">
-
+    <?php if(!empty($slider)): ?>
     <div class="rev_slider_wrapper">
       <div class="rev_slider" data-version="5.0">
         <ul>
@@ -26,6 +26,7 @@ Welcome to Zoom Bangladesh
         </ul>
       </div><!-- end .rev_slider -->
     </div>
+    <?php endif;?>
     <!-- end .rev_slider_wrapper -->
     <script>
       $(document).ready(function(e) {
@@ -88,6 +89,9 @@ Welcome to Zoom Bangladesh
 </section>
 <!-- Section: welcome -->
 <section>
+
+<?php if(!empty($help)): ?>
+
   <div class="container pt-4 pb-0">
     <div class="section-content">
       <div class="row equal-height-inner home-boxes" data-margin-top="-100px">
@@ -100,7 +104,7 @@ Welcome to Zoom Bangladesh
                 </a>
                 <div class="p-10">
                   <h4 class="text-uppercase text-white mt-0">Donate money</h4>
-                  <p class="text-white text-justify"><br><?php echo str_replace('<p>', '', $help[0]->description); ?></p>
+                  <p class="text-white text-justify"><br><?php echo str_replace('<p>', '', isset($help[0]->description) ? $help[0]->description : ''); ?></p>
                   <a href="{{ route('donate.page') }}" class="btn btn-border btn-circled btn-transparent btn-sm">Donate Us</a>
                 </div>
               </div>
@@ -117,7 +121,7 @@ Welcome to Zoom Bangladesh
                 </a>
                 <div class="p-10">
                   <h4 class="text-uppercase text-white mt-0">Become a Volunteer</h4>
-                  <p class="text-white text-justify"><br><?php echo str_replace('<p>', '', $help[1]->description); ?></p>
+                  <p class="text-white text-justify"><br><?php echo str_replace('<p>', '', isset($help[1]->description) ? $help[1]->description : ''); ?></p>
                   <a href="{{ route('volunteer.page') }}" class="btn btn-border btn-circled btn-transparent btn-sm">Join us Now</a>
                 </div>
               </div>
@@ -131,7 +135,7 @@ Welcome to Zoom Bangladesh
                 <a class="icon bg-white icon-circled icon-xl" style="background-color: red!important" href="#"> <i style="color:white!important;" class="flaticon-charity-dove-of-peace text-theme-colored"></i> </a>
                 <div class="p-10">
                   <h4 class="text-uppercase text-white mt-0">Adopt a Child</h4>
-                  <p class="text-white text-justify"><br><?php echo str_replace('<p>', '', $help[2]->description); ?></p>
+                  <p class="text-white text-justify"><br><?php echo str_replace('<p>', '', isset($help[2]->description) ? $help[2]->description : ''); ?></p>
                   <a href="{{ route('contact') }}" class="btn btn-border btn-circled btn-transparent btn-sm">Contact us</a>
                 </div>
               </div>
@@ -147,7 +151,7 @@ Welcome to Zoom Bangladesh
                 </a>
                 <div class="p-10">
                   <h4 class="text-uppercase text-white mt-0">Give Scholarship</h4>
-                  <p class="text-white text-justify"><br><?php echo str_replace('<p>', '', $help[3]->description); ?>.</p>
+                  <p class="text-white text-justify"><br><?php echo str_replace('<p>', '', isset($help[3]->description) ? $help[3]->description : ''); ?>.</p>
                   <a href="https://www.facebook.com/zoombanglayouth" target="_blank" class="btn btn-border btn-circled btn-transparent btn-sm">Join Facebook?</a>
                 </div>
               </div>
@@ -157,6 +161,7 @@ Welcome to Zoom Bangladesh
       </div>
     </div>
   </div>
+  <?php endif;?>
 </section>
 
 <!-- Section: Causes 1 -->
@@ -233,7 +238,7 @@ Welcome to Zoom Bangladesh
               </a>
               <div class="ml-70 ml-sm-0">
                 <h5 class="icon-box-title mt-15 mt-sm-0 mb-5 text-white text-uppercase">Give Donation</h5>
-                <p class="text-justify"><?php echo str_replace('<p>', '', $help[0]->description); ?></p>
+                <p class="text-justify"><?php echo str_replace('<p>', '', isset($help[0]->description) ? $help[0]->description : ''); ?></p>
               </div>
             </div>
           </div>
@@ -244,7 +249,7 @@ Welcome to Zoom Bangladesh
               </a>
               <div class="ml-70 ml-sm-0">
                 <h5 class="icon-box-title mt-15 mt-sm-0  mb-5 text-uppercase text-white">Become Volenteer</h5>
-                <p class="text-justify"><?php echo str_replace('<p>', '', $help[1]->description); ?></p>
+                <p class="text-justify"><?php echo str_replace('<p>', '', isset($help[1]->description) ? $help[1]->description : ''); ?></p>
               </div>
             </div>
           </div>
@@ -255,7 +260,7 @@ Welcome to Zoom Bangladesh
               </a>
               <div class="ml-70 ml-sm-0">
                 <h5 class="icon-box-title mt-15 mt-sm-0 mb-5 text-uppercase text-white">Give Scholarship</h5>
-                <p class="text-justify"><?php echo str_replace('<p>', '', $help[2]->description); ?></p>
+                <p class="text-justify"><?php echo str_replace('<p>', '', isset($help[2]->description) ? $help[2]->description : ''); ?></p>
               </div>
             </div>
           </div>
@@ -266,7 +271,7 @@ Welcome to Zoom Bangladesh
               </a>
               <div class="ml-70 ml-sm-0">
                 <h5 class="icon-box-title mt-15 mt-sm-0 mb-5 text-uppercase text-white">Adopt a Child</h5>
-                <p class="text-justify"><?php echo str_replace('<p>', '', $help[3]->description); ?></p>
+                <p class="text-justify"><?php echo str_replace('<p>', '', isset($help[3]->description) ? $help[3]->description : ''); ?></p>
               </div>
             </div>
           </div>
@@ -404,7 +409,7 @@ Welcome to Zoom Bangladesh
     <div class="section-title text-center">
       <div class="row">
         <div class="col-md-8 col-md-offset-2"><br>
-          <h2 class="mt-0 line-height-1 text-center">Month of <span class="text-theme-colored"> Employee </span></h2>
+          <h2 class="mt-0 line-height-1 text-center">Month of <span class="text-theme-colored"> Volunteer </span></h2>
           <div class="separator separator-rouned">
             <i class="fa fa-cog fa-spin"></i>
           </div>
@@ -422,10 +427,15 @@ Welcome to Zoom Bangladesh
             $sl += 1;
             ?>
             <div class="item">
+            <?php if(!empty($value->team->image)):?>
               <div class="thumb"><img alt="" src="frontant/team/{{ $value->team->image}}" class="img-fullwidth"></div>
+              <?php else: ?>
+                <div class="thumb"><img alt="" src="default.jpg" class="img-fullwidth"></div>
+                
+              <?php endif;?>
               <div class="info">
-                <h4 class="mb-0">{{ $value->team->full_name }} <small>- {{ $value->team->designation }}</small> </h4>
-                <h4 style="color:green" class="mb-0">{{ $value->team->branch }}</h4>
+                <h4 class="mb-0">{{ isset($value->team->full_name) ? $value->team->full_name : '' }} <small>- {{ isset($value->team->designation) ? $value->team->designation: '' }}</small> </h4>
+                <h4 style="color:green" class="mb-0">{{ isset($value->team->branch) ? $value->team->branch: '' }}</h4>
                 <p><?php echo  $value->description; ?></p>
                 <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-10 mb-0">
                   <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -454,7 +464,7 @@ Welcome to Zoom Bangladesh
     <div class="section-title text-center">
       <div class="row">
         <div class="col-md-8 col-md-offset-2"><br>
-          <h2 class="mt-0 line-height-1 text-center">Year of <span class="text-theme-colored"> Employee </span></h2>
+          <h2 class="mt-0 line-height-1 text-center">Year of <span class="text-theme-colored"> Volunteer </span></h2>
           <div class="separator separator-rouned">
             <i class="fa fa-cog fa-spin"></i>
           </div>
@@ -472,10 +482,17 @@ Welcome to Zoom Bangladesh
             $sl += 1;
             ?>
             <div class="item">
+
+            <?php if(!empty($value->team->image)):?>
               <div class="thumb"><img alt="" src="frontant/team/{{ $value->team->image}}" class="img-fullwidth"></div>
+              <?php else: ?>
+                <div class="thumb"><img alt="" src="default.jpg" class="img-fullwidth"></div>
+                
+              <?php endif;?>
+             
               <div class="info">
-                <h4 class="mb-0">{{ $value->team->full_name }} <small>- {{ $value->team->designation }}</small> </h4>
-                <h4 style="color:green" class="mb-0">{{ $value->team->branch }}</h4>
+                <h4 class="mb-0">{{ isset($value->team->full_name) ? $value->team->full_name : '' }} <small>- {{ isset($value->team->designation) ? $value->team->designation: '' }}</small> </h4>
+                <h4 style="color:green" class="mb-0">{{ isset($value->team->branch) ? $value->team->branch : '' }}</h4>
                 <p><?php echo  $value->description; ?></p>
                 <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-10 mb-0">
                   <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -513,7 +530,15 @@ Welcome to Zoom Bangladesh
             @foreach($sponsor as $key => $value)
             <div class="item">
               <div class="text-center">
-                <div class="thumb"><img class="img-circle" alt="" src="frontant/sponsor/{{ $value->logo}}"></div>
+
+              <?php if(!empty($value->logo)):?>
+              <div class="thumb"><img alt="" src="frontant/sponsor/{{ $value->logo}}" class="img-fullwidth"></div>
+              <?php else: ?>
+                <div class="thumb"><img alt="" src="default.jpg" class="img-fullwidth"></div>
+                
+              <?php endif;?>
+
+               
                 <div class="content pt-10">
                   <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat turpis nec leo pellentesque tincidunt adipiscing elit.</p> -->
                   <i class="fa fa-quote-right font-36 mt-10 text-gray-lightgray"></i>
@@ -539,7 +564,13 @@ Welcome to Zoom Bangladesh
             @foreach($people as $key => $value)
             <div class="item">
               <div class="text-center">
+              <?php if(!empty($value->image)):?>
                 <div class="thumb"><img class="img-circle" alt="" src="frontant/people/{{$value->image}}"></div>
+              <?php else: ?>
+                <div class="thumb"><img alt="" src="default.jpg" class="img-fullwidth"></div>
+                
+              <?php endif;?>
+               
                 <div class="content">
                   <p><?php echo $value->description; ?></p>
                   <i class="fa fa-quote-right font-36 mt-10 text-gray-lightgray"></i>

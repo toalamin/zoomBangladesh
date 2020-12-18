@@ -43,8 +43,8 @@ Mission & Vission
                        
                         <tr>
                             <td>1</td>
-                            <td>{{ $mission->title }}</td>
-                            <td>{{ $mission->description }}</td>
+                            <td>{{ isset($mission->title) ? $mission->title : '' }}</td>
+                            <td><?php echo isset($mission->description) ? $mission->description : '' ?></td>
                           
                             
                             <td nowrap>

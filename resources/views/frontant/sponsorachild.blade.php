@@ -135,7 +135,7 @@ Sponsor A Child
 
             <div class="row" style="text-align: center;">
 
-            <?php echo $featured->description;?>
+            <?php echo isset($featured->description) ? $featured->description : '';?>
             </div>
         </div>
     </section>

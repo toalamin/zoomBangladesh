@@ -54,6 +54,7 @@ class UserController extends Controller
         }
 
         $user = new User();
+        $user->user_type = $request->user_type;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
@@ -118,6 +119,7 @@ class UserController extends Controller
         endif;
 
         $user = User::find($id);
+        $user->user_type = $request->user_type;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;

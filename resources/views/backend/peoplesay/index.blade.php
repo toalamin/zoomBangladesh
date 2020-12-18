@@ -54,7 +54,7 @@ People Say List
                             <td>{{ $key+1 }}</td>
                             <td>{{ $value->name }}</td>
                             <td>{{ $value->designation }}</td>
-                            <td>{{ $value->description }}</td>
+                            <td><?php echo $value->description ?></td>
                             <td><img src="frontant/people/{{ $value->image}}" height="50px" width="50px" /></td>
                             <td>
                                 @if ($value->visibility === 1)
